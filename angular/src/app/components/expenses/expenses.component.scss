@@ -1,0 +1,88 @@
+form{
+    border-radius: 10%;
+    border-style: solid;
+    border-color: rgba(85, 23, 23, 0.567);
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 20px;
+    justify-items: center;
+    background-color:  rgb(195, 119, 65);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blanchedalmond;
+
+}
+input ,select,textarea{
+    color: rgb(195, 119, 65);
+
+}
+.submit-button{
+    margin-top: 30px;
+    width: 100px;
+    height: 50px;
+    color: rgb(195, 119, 65);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form header, form label, form select, form input, form textarea, form button {
+    text-align: center;
+  }
+
+header{
+    margin: 30px;
+    font-size:25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}  
+/* styles.css (or your component's CSS file) */
+
+/* styles.css (or your component's CSS file) */
+
+// .expense-form {
+//     background-color: blanchedalmond;
+//     padding: 20px;
+//     border-radius: 10px;
+//     border-style: solid;
+//   }
+  
+//   .form-group {
+//     margin-bottom: 10px;
+//   }
+  
+//   .form-group label {
+//     display: block;
+//   }
+  
+//   .form-control {
+//     padding: 5px;
+//     border: 1px solid rgb(195, 119, 65);
+//     border-radius: 5px;
+//   }
+  
+//   .submit-button {
+//     background-color: rgb(195, 119, 65);
+//     color: white;
+//     padding: 10px;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//   }
+  
+//   .spinner {
+//     display: block;
+//     margin: 10px auto;
+//   }
+  
+//   .success-message {
+//     color: rgb(195, 119, 65);
+//     font-weight: bold;
+//   }
+  

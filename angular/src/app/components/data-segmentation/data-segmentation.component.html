@@ -1,0 +1,35 @@
+<div id="all">
+  <input type="button" value="הוצאות" (click)="flagExpense = true ;flagRevenue = false" class="header">
+  <input type="button" value="הכנסות" (click)="flagRevenue = true ;flagExpense = false" class="header">
+</div>
+
+<div *ngIf="flagExpense || flagRevenue" class="allTags">
+  <input type="button" value="לפי שנה" class="option" (click)="flagYear = true;flagMonth = false;flag2date = false"> 
+  <input type="button" value="לפי חודש" class="option" (click)="flagMonth = true;flagYear = false;flag2date = false"><br> 
+  <input type="button" value="בין טווח תאריכים" class="option" (click)="flag2date = true;flagMonth = false;flagYear = false">
+  <div *ngIf = "flagRevenue">
+  <input type="button" value="לפי לקוח" class="option"(click) = "flagCust = true">
+  </div>
+</div>
+
+<div *ngIf="flagYear" >
+  <input type="number" placeholder="הקש שנה" (blur)="getByYear($event)" class="input"><br>
+</div>
+
+<div *ngIf="flagMonth" >
+  <input type="number" placeholder="הקש חודש" (blur)="getByMonth($event)" class="input"><br>
+</div>
+
+<div *ngIf="flag2date" >
+  <input type="date" (change)="startDate = $event" class="input">
+  <input type="date" (change)="endDate = $event" class="input">  
+  <input type="submit" (click)="getBy2date()">
+</div>
+
+<select (change)="getByCust($event)" *ngIf="flagCust" class="input">
+  <option *ngFor="let customer of customers" [value]="customer.name" class="input">{{ customer.name }}</option>
+</select>
+
+<div *ngIf = "flagExpense"  ><app-payment *ngFor="let e of this.expense.expenses" [expense] = "e"></app-payment>   </div>
+<div *ngIf = "flagRevenue"  ><app-revenues *ngFor="let e of this.revenue.receipt" [revenue] = "e"></app-revenues>   </div>
+

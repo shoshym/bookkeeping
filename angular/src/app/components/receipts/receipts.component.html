@@ -1,0 +1,32 @@
+<form [formGroup]="receiptForm" (ngSubmit)="saveReceipt()">
+  <header>פרטי קבלה חדשה</header>
+
+  <label for="customer">שם לקוח</label>
+    <select formControlName="customer">
+      <option *ngFor="let customer of this.customers" [value]="customer.name">{{ customer.name }}</option>
+    </select><br>
+  <input type="button" value="הוספת לקוח חדש" (click)="flagNewcust = true"><br>
+  <div *ngIf="flagNewcust">
+    <input type="text" placeholder="שם לקוח" (blur)="this.newCustomer.name = $event">
+    <input type="number" placeholder="מספר לקוח" (blur)="this.newCustomer.number = $event">
+    <input type="button" value="אישור" (click)="addCustomer()">
+  </div><br>
+  <label for="date">תאריך</label>
+  <input type="date" formControlName="date">
+  <label for="paymentMethod">אופן תשלום</label>
+
+  <select formControlName="paymentMethods">
+    <option value="credit-card">אשראי</option>
+    <option value="cash">מזומן</option>
+    <option value="check">צק</option>
+  </select><br>
+
+  <label for="amount">סכום</label>
+  <input type="number" formControlName="amount"> <br>
+  <label for="details">פרטים</label>
+  <textarea formControlName="details"></textarea> <br>
+  <button type="submit" (click)="flagSpinner = true">שמירה</button>
+  <p-progressSpinner ariaLabel="loading" *ngIf="flagSpinner" />
+  <label>{{this.succses}}</label>
+  
+</form>

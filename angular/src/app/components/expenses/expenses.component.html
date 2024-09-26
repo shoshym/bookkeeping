@@ -1,0 +1,21 @@
+<form [formGroup]="expenseForm" (submit)="saveExpense()" class="expense-form">
+    <header>הוצאה חדשה</header>
+    <label>בחר תאריך</label>
+    <input type="date" formControlName="date" class="form-control">  
+    <label>הקש סכום</label>
+    <input type="number" formControlName="amount" class="form-control">  
+    <label>הכנס שם ספק</label>
+    <input type="text" formControlName="provider" class="form-control">
+    <label>בחר אופן תשלום</label>
+    <select class="form-control">
+      <option>מזומן</option>
+      <option>אשראי</option>
+      <option>צ'ק</option>
+    </select>
+    <label>הכנס פרוט</label>
+    <input type="text" formControlName="details" class="form-control">
+    <input type="submit" value="שמירה" (click)="flagSpinner = true" class="submit-button">
+    <p-progressSpinner ariaLabel="loading" *ngIf="flagSpinner" class="spinner"></p-progressSpinner>
+    <label>{{this.succses}}</label>
+  </form>
+  

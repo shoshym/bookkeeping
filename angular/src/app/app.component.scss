@@ -1,0 +1,40 @@
+
+.card {
+    background-color: #F9E79F; 
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .ui-tabview-nav li {
+    background-color: #D5DBDB; 
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 10px 15px;
+  }
+  
+  .ui-tabview-nav li.ui-state-active {
+    background-color: #E59866; 
+    color: white; 
+  }
+  
+  .ui-tabview-panel {
+    background-color: #FAD7A0; 
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .tab-links {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .tab-link {
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: #c97944;
+    text-decoration-line: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  }
